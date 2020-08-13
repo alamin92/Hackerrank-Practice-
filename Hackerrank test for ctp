@@ -1,0 +1,53 @@
+
+
+
+
+
+int countDuplicate(vector<int> numbers) {
+
+
+  sort(numbers.begin(), number.end());
+    int main_counter;
+    int count=0; // set a counter to 0 to count all the duplicate elemnets. 
+    int y=0;
+  int i=0;
+  int j=0;
+    while(i!=numbers.size()){
+      j=i+1;
+      while(numbers[i]==numbers[j]){
+        count++;
+        j++;
+      }
+      if(count>0){
+          main_counter++;
+          count=0;
+        }
+      i=j+1;
+    }
+
+    11111 22355
+
+
+
+
+
+
+//     //for(int i=y; i<n
+//     umbers.size(); i++){// for loop to start from the number 1 
+//         for(int j=i+1; j<numbers.size() ; j++){// second for loop from the second number.
+//         if(numbers[i]==numbers[j]){
+//             count++;
+//         }
+//         }
+//         -------------------------
+//         if(count>0){
+//           main_counter++;
+//           count=0;
+//         }
+        
+//     }
+//     return count;
+
+// }
+
+11111 22355
