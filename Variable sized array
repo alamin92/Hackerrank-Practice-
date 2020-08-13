@@ -1,0 +1,30 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n, size, numbers, position, selectVec, q;
+    int arr[n];
+    cin>>n>>q;
+    vector<vector<int>>numberVec;
+    for(int i=0; i<n; i++){
+        cin>>size;
+        vector<int>insideVec;
+        for(int j=0; j<size; j++){
+            cin>>numbers;
+            insideVec.push_back(numbers);
+        }
+        numberVec.push_back(insideVec);
+    }
+    for(int k=0; k<q; k++){
+        cin>>selectVec>>position;
+        cout<<numberVec[selectVec][position]<<endl;
+    }
+    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
