@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// Complete the countingValleys function below.
+int countingValleys(int n, string s) {
+/*So it goes up and down. In the example UDDDUDUU , U see that the hiker crossed only one valley here, so we need to output 1, if there are two valleys , means if there is one more peak up to the sea level  in the middle, then it could have 2 valleys. So we need to count from beginning to the end how many times we reach sea level, additionally also one more thing we need to think about. If at the beginning it starts to go up, then next go down, we are at the sea level now, we are not going to count it because it is not a valley we just crossed a hill, so we need to skip counting that part, and return 0, since we did not cross any valleys. Somewhere in the middle when we reach the sea level, if the upcoming letter is again . 
+
+So it doen;t matter if we go 1 step down or 10 steps down as long as we reach at the sea level somewhere, then we need to count that part
+
+*/
+int current=0;
+    int count=0;
+    
+    for(int i=0;i<s.size();i++)
+    {
+        //v=current;
+        if(s[i]=='U'){
+            current++;
+            //count++;
+            if(current==0)
+                count++;
+        
+        }
+        else{
+             current--;
+            //count--;
+        }
+        /* so here is the problem, this if won;t count when u got the first if as a result it won;t back down.  */
+        // if(current==0)
+        //        count++;
+           
+    }
+
+    return count;
+
+}
+
+
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    int n;
+    cin >> n;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    string s;
+    getline(cin, s);
+
+    int result = countingValleys(n, s);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
